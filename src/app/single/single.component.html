@@ -1,0 +1,64 @@
+<div class="p-10 flex gap-10 w-full md:flex-row flex-col">
+    <div class="md:w-1/2 w-full justify-end flex">
+        <img [src]="singleRecipe.image" class="rounded-lg md:h-4/5 w-full h-full">
+    </div>
+    <div class="md:w-1/2 flex flex-col gap-5 w-full ">
+        <div class="flex justify-between items-center">
+            <h2 class="text-4xl font-bold">{{singleRecipe.name}}</h2>
+            <div *ngFor="let rating of singleRecipe.rating" class="rating flex items-center">
+                <!-- <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"> -->
+               <!-- {{rating}} -->
+                
+                
+            </div>
+            <p class="ms-1">{{singleRecipe.rating}} ({{singleRecipe.reviewCount}})</p>
+        </div>
+        <div class="flex gap-3">
+            <div class="badge badge-neutral">{{singleRecipe.cuisine}}</div>
+            <div class="badge badge-neutral">{{singleRecipe.difficulty}}</div>
+            <div class="badge badge-neutral">{{singleRecipe.mealType}}</div>
+        </div>
+
+        <div class="flex flex-row gap-1">
+            <div *ngFor="let tags of singleRecipe.tags">
+                
+                    <p class="font-semibold">#{{tags}}</p>
+                
+            </div>
+        </div>
+
+        <div class="flex gap-3 flex-wrap justify-between">
+            <div class="flex items-center gap-3">
+                <p>Preparation Time:</p>
+                <div class="btn btn-active btn-neutral rounded-full cursor-text">{{singleRecipe.prepTimeMinutes}}</div>
+            </div>
+            <div class="flex items-center gap-3">
+                <p>Cooking Time:</p>
+                <div class="btn btn-active btn-neutral rounded-full cursor-text">{{singleRecipe.cookTimeMinutes}}</div>
+            </div>
+            <div class="flex items-center gap-3">
+                <p>Calories Per Serving:</p>
+                <div class="btn btn-active btn-neutral rounded-full cursor-text">{{singleRecipe.caloriesPerServing}}
+                </div>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked>
+            <div class="collapse-title text-xl font-medium">Instructions</div>
+            <div class="collapse-content">
+                <div *ngFor="let instructions of singleRecipe.instructions">
+                    <li> {{instructions}}</li>
+                </div>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2">
+            <div class="collapse-title text-xl font-medium">Ingredients</div>
+            <div class="collapse-content">
+                <div *ngFor="let ingredient of singleRecipe.ingredients">
+                    <li> {{ingredient}}</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
