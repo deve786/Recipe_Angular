@@ -5,13 +5,12 @@
     <div class="md:w-1/2 flex flex-col gap-5 w-full ">
         <div class="flex justify-between items-center">
             <h2 class="text-4xl font-bold">{{singleRecipe.name}}</h2>
-            <div *ngFor="let rating of singleRecipe.rating" class="rating flex items-center">
-                <!-- <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400"> -->
-               <!-- {{rating}} -->
-                
+            <div  class="rating flex items-center">
+                <i class="fa-solid fa-star text-yellow-500"></i>
+                <p class="ms-1">{{singleRecipe.rating}} ({{singleRecipe.reviewCount}})</p>
                 
             </div>
-            <p class="ms-1">{{singleRecipe.rating}} ({{singleRecipe.reviewCount}})</p>
+
         </div>
         <div class="flex gap-3">
             <div class="badge badge-neutral">{{singleRecipe.cuisine}}</div>
